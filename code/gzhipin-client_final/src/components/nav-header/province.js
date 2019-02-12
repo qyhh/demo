@@ -1,0 +1,142 @@
+export default function pro(){
+    return({
+        priciList: [
+            {
+                id: 0,
+                province: '请选择省份',
+                cities: ['请选择城市']
+            }, {
+                id:1,
+                province:'重庆',
+                cities:['重庆']
+            },{
+                id: 2,
+                province: '北京',
+                cities: ['北京']
+            },{
+                id:3,
+                province:'天津',
+                cities:['天津']
+            },{
+                id:4,
+                province:'上海',
+                cities:['上海']
+            },{
+                id:5,
+                province:'山西',
+                cities:['太原','大同']
+            },{
+                id:6,
+                province:'河北',
+                cities:['石家庄']
+            },{
+                id:7,
+                province:'广东',
+                cities:['深圳','珠海']
+            },{
+                id:8,
+                province:'山东',
+                cities:['烟台','青岛']
+            },{
+                id:9,
+                province:'江苏',
+                cities:['苏州','徐州']
+            },{
+                id:10,
+                province:'河南',
+                cities:['郑州','南阳']
+            },{
+                id:11,
+                province:'浙江',
+                cities:['温州','杭州']
+            },{
+                id:12,
+                province:'陕西',
+                cities:['西安','咸阳']
+            },{
+                id:13,
+                province:'湖南',
+                cities:['长沙','邵阳']
+            },{
+                id:14,
+                province:'福建',
+                cities:['厦门','福州']
+            },{
+                id:15,
+                province:'云南',
+                cities:['昆明','大理']
+            },{
+                id:16,
+                province:'广西壮族自治区',
+                cities:['玉林','桂林']
+            },{
+                id:17,
+                province:'安徽',
+                cities:['芜湖','合肥']
+            },{
+                id:18,
+                province:'海南',
+                cities:['三亚','海口']
+            },{
+                id:19,
+                province:'江西',
+                cities:['南昌','赣州']
+            },{
+                id:20,
+                province:'湖北',
+                cities:['武汉','宜昌']
+            },{
+                id:21,
+                province:'辽宁',
+                cities:['大连','沈阳']
+            },{
+                id:22,
+                province:'台湾',
+                cities:['台北','高雄']
+            },{
+                id:23,
+                province:'黑龙江',
+                cities:['哈尔滨','牡丹江']
+            },{
+                id:24,
+                province:'内蒙古自治区',
+                cities:['包头','呼和浩特']
+            },{
+                id:25,
+                province:'澳门',
+                cities:['澳门']
+            },{
+                id:26,
+                province:'贵州',
+                cities:['贵阳','黔南']
+            },{
+                id:27,
+                province:'甘肃',
+                cities:['兰州','天水']
+            },{
+                id:28,
+                province:'青海',
+                cities:['西宁','海西']
+            },{
+                id:29,
+                province:'新疆维吾尔自治区',
+                cities:['乌鲁木齐','哈密']
+            },{
+                id:30,
+                province:'西藏',
+                cities:['拉萨']
+            },{
+                id:31,
+                province:'吉林',
+                cities:['吉林','长春']
+            },{
+                id:32,
+                province:'宁夏回族自治区',
+                cities:['银川','中卫']
+            }
+        ],
+        provinceSelected: '请选择省份',
+        citySelected: ''
+
+})
+}
