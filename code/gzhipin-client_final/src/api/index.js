@@ -25,3 +25,9 @@ export const reqReadMsg = (from) => ajax('/readmsg', {from}, 'POST')
 
 //获取select列表
 export const reqSelectList=(type,city,post)=>ajax('/selectlist',{type,city,post})
+
+//获取dashen列表
+export const reqSelectDashen=(type,city,post)=>ajax('/selectdashen',{type,city,post})
+
+//获取修改用户
+export const reqUpdate = (user) => ajax('/updateuser', user, 'POST')

@@ -3,11 +3,11 @@ import {connect} from 'react-redux'
 import ProvinceCity from '../../components/nav-header/nav-header'
 
 
-import {getSelectList, } from '../../redux/actions'
+import {getSelectDashen } from '../../redux/actions'
 import SelectList from '../../components/select-list/select-list'
 
 
-class Select extends Component{
+class SelectDashen extends Component{
     constructor(props) {
         super(props)
         this.state = {
@@ -28,24 +28,24 @@ class Select extends Component{
     }
 
     handleclick=()=>{
-        this.props.getSelectList('laoban',this.state.city,this.state.post)
+        this.props.getSelectDashen('dashen',this.state.city,this.state.post)
         console.log(this.state.province,this.state.city,this.state.post)
     }
 
     render () {
 
         return (
-                <div>
+            <div>
 
-                    <ProvinceCity parentAction={this.handleParentAction.bind(this)}/>
-                    <input onChange={this.handlePost.bind(this)}/>
-                    <button style={{width:'30%',color:'lightgreen'}} onClick={this.handleclick.bind(this)}>搜索</button>
-                    {this.props.selectList.length===0?<h1><b>很抱歉，没有相应职位</b></h1>:<SelectList selectList={this.props.selectList}/>}
-                </div>
+                <ProvinceCity parentAction={this.handleParentAction.bind(this)}/>
+                <input onChange={this.handlePost.bind(this)}/>
+                <button style={{width:'30%',color:'lightgreen'}} onClick={this.handleclick.bind(this)}>搜索</button>
+                {this.props.selectDashen.length===0?<h1><b>很抱歉，没有相应大神</b></h1>:<SelectList selectList={this.props.selectDashen}/>}
+            </div>
         )
     }
 
 }
-export default connect(  state => ({selectList: state.selectList}),
-    {getSelectList})(Select)
+export default connect(  state => ({selectDashen: state.selectDashen}),
+    {getSelectDashen})(SelectDashen)
 //

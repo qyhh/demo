@@ -13,7 +13,9 @@ import {
   RECEIVE_MSG_LIST,
   RECEIVE_MSG,
   MSG_READ,
-  RECEIVE_SELECT_LIST
+  RECEIVE_SELECT_LIST,
+  RECEIVE_SELECT_DASHEN,
+    RECEIVE_UPDATE
 } from './action-types'
 import {
   reqSelectList,
@@ -23,7 +25,8 @@ import {
   reqUser,
   reqUserList,
   reqChatMsgList,
-  reqReadMsg
+  reqReadMsg, reqSelectDashen,
+    reqUpdate
 } from '../api'
 
 
@@ -149,6 +152,20 @@ export const updateUser = (user) => {
   }
 }
 
+//修改用户异步action
+export const updateU = (user) => {
+  return async dispatch => {
+    const response = await reqUpdate(user)
+    const result = response.data
+    if(result.code===0) { // 更新成功: data
+      dispatch(receiveUpdate(result.data))
+    }
+    // else { // 更新失败: msg
+    //   dispatch(resetUser(result.msg))
+    // }
+  }
+}
+
 // 获取用户异步action
 export const getUser = () => {
   return async dispatch => {
@@ -207,6 +224,19 @@ export const getSelectList =(type,city,post)=>{
   }
 }
 
+//dashen列表
+export const getSelectDashen =(type,city,post)=>{
+
+  return async dispatch => {
+    const response = await reqSelectDashen(type,city,post)
+    const result = response.data
+    // 得到结果后, 分发一个同步action
+    if(result.code===0) {1
+      dispatch(receiveSelectDashen(result.data))
+    }
+  }
+}
+
 // 授权成功的同步action
 const authSuccess = (user) => ({type: AUTH_SUCCESS, data: user})
 // 错误提示信息的同步action
@@ -225,3 +255,7 @@ const receiveMsg = (chatMsg, userid) => ({type: RECEIVE_MSG, data: {chatMsg, use
 const msgRead = ({count, from, to}) => ({type: MSG_READ, data: {count, from, to}})
 //接受查询列表的同步action
 const receiveSelectList = (selectList) =>({type:RECEIVE_SELECT_LIST,data:selectList})
+//dashen列表action
+const receiveSelectDashen = (selectdashen) =>({type:RECEIVE_SELECT_DASHEN,data:selectdashen})
+//修改action
+const receiveUpdate=(user) => ({type: RECEIVE_UPDATE, data:user})

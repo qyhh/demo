@@ -15,6 +15,8 @@ class DashenInfo extends Component {
     header: '',
     post: '',
     info: '',
+    province:'',
+    city:''
   }
 
   // 更新header状态
@@ -48,6 +50,8 @@ class DashenInfo extends Component {
         <NavBar>大神信息完善</NavBar>
         <HeaderSelector setHeader={this.setHeader}/>
         <InputItem placeholder='请输入求职岗位' onChange={val => {this.handleChange('post', val)}}>求职岗位:</InputItem>
+        <p><InputItem placeholder='请输入省份' onChange={val => {this.handleChange('province', val)}}>省份:</InputItem>
+          <InputItem placeholder='请输入城市' onChange={val => {this.handleChange('city', val)}}>城市:</InputItem></p>
         <TextareaItem title="个人介绍:"
                       placeholder='请输入个人介绍'
                       rows={3} onChange={val => {this.handleChange('info', val)}}/>

@@ -6,6 +6,9 @@ import {connect} from 'react-redux'
 import {getUserList} from '../../redux/actions'
 
 import UserList from '../../components/user-list/user-list'
+import {Link} from "react-router-dom";
+import {Icon, NavBar} from "antd-mobile";
+
 
 class Laoban extends Component {
   componentDidMount () {
@@ -14,7 +17,16 @@ class Laoban extends Component {
   }
   render () {
     return (
-      <UserList userList={this.props.userList}/>
+        <div>
+          <NavBar
+              rightContent={[
+
+                <Link to='selectdashen'><Icon key="0" type="search" style={{ marginRight: '16px' }}  /></Link>
+
+              ]}>
+            老板列表 </NavBar>
+          <UserList userList={this.props.userList}/>
+        </div>
     )
   }
 }

@@ -1,7 +1,7 @@
 /*
 用户个人中心路由组件
  */
-
+import {Link} from "react-router-dom";
 import React from 'react'
 import {Result, List, WhiteSpace, Button, Modal} from 'antd-mobile'
 import {connect} from 'react-redux'
@@ -49,7 +49,9 @@ class Personal extends React.Component {
         </List>
         <WhiteSpace/>
         <List>
+            <Link to='updatedashen'><Button type='primary'>修改信息</Button></Link>
           <Button type='warning' onClick={this.logout}>退出登录</Button>
+
         </List>
       </div>
     )

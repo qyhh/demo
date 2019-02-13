@@ -18,6 +18,8 @@ import NotFound from '../../components/not-found/not-found'
 import NavFooter from '../../components/nav-footer/nav-footer'
 import Chat from '../chat/chat'
 import Select from '../select/select'
+import SelectDashen from '../select-dashen/select-dashen'
+import UpdateDashen from '../update/update-dashen'
 
 
 import {getRedirectTo} from '../../utils'
@@ -120,6 +122,8 @@ class Main extends Component {
           <Route path='/dasheninfo' component={DashenInfo}/>
           <Route path='/chat/:userid' component={Chat}/>
           <Route path='/select' component={Select}/>
+          <Route path='/selectdashen' component={SelectDashen}/>
+          <Route path='/updatedashen' component={UpdateDashen}/>
           <Route component={NotFound}/>
         </Switch>
         {currentNav ? <NavFooter navList={navList} unReadCount={unReadCount}/> : null}

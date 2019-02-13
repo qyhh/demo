@@ -12,7 +12,9 @@ import {
   RECEIVE_MSG_LIST,
   RECEIVE_MSG,
   MSG_READ,
-  RECEIVE_SELECT_LIST
+  RECEIVE_SELECT_LIST,
+  RECEIVE_SELECT_DASHEN,
+    RECEIVE_UPDATE
 } from './action-types'
 
 import {getRedirectTo} from '../utils'
@@ -35,6 +37,8 @@ function user(state=initUser, action) {
       return action.data
     case RESET_USER: // data是msg
       return {...initUser, msg: action.data}
+    case RECEIVE_UPDATE:
+      return action.data
     default:
       return state
   }
@@ -57,6 +61,17 @@ const initSelectList=[]
 function selectList(state=initSelectList, action) {
   switch (action.type) {
     case RECEIVE_SELECT_LIST:  // data为selectList
+      return action.data
+    default:
+      return state
+  }
+}
+
+const initSelectDashen=[]
+//产生selectDashen状态的reducers
+function selectDashen(state=initSelectDashen, action) {
+  switch (action.type) {
+    case RECEIVE_SELECT_DASHEN:  // data为selectList
       return action.data
     default:
       return state
@@ -113,7 +128,8 @@ export default combineReducers({
   user,
   userList,
   chat,
-  selectList
+  selectList,
+  selectDashen
 })
 // 向外暴露的状态的结构: {user: {}, userList: [], chat: {} , selectList:[]}
 
